@@ -22,13 +22,22 @@ app.use(cors());
 
 app.post('/register', (req, res) => {
 	//create user
-	console.log(req.body);
+	//store req.body values in variables string name, string pwd, string idno
+	//console log only name from req.body
+	//create new user object
+	//save new user object
+	//send response with status code 200 and message 'user created'
+	//if error, send response with status code 400 and message 'error creating user'
+	let name=req.body.name;
+	let pwd=req.body.pwd;
+	let idno=req.body.idno;
+	console.log(name);
 	const users = new User({
-		name: req.body.name,
-		pwd: req.body.pwd,
-		idno: req.body.idno
+		name: name,
+		pwd: pwd,
+		idno: idno
 	}).save().then(() => {
-		console.log(responce);
+		//console.log(responce);
 		console.log('user saved');
 		res.send('user created');
 	}
